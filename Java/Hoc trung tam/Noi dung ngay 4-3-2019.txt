@@ -1,0 +1,8 @@
+- Class: lop, object: vat the trong class
+- Chuan dat ten cua class: 
+- Method cua class hop le: vd myFirst
+- Class phai trung voi ten cua file minh thuc thi
+- Java identifier
+- Access Modifiers (Pham vi truy cap): default, public, protected, private
+- Co hinh anh minh hoa trong slide ngay hom ni
+-
