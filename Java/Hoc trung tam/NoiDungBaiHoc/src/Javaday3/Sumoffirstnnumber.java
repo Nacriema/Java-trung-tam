@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baitapngay3;
+package Javaday3;
 import java.util.Scanner;
 
 /**
