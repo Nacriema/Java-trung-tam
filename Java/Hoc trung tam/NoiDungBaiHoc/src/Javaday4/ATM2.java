@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Javaday3;
+package Javaday4;
 
 /**
  *
  * @author PC
  */
-public class TestGit {
-    
+public interface ATM2 {
+    public boolean login(String username, String password);
+    public boolean logout(String username);
 }

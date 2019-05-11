@@ -12,9 +12,9 @@ import com.sun.org.apache.xml.internal.security.encryption.AgreementMethod;
  * @author PC
  */
 public class Animal {
-    private String name;
-    private int Age;
-    private String TypeOfAnimal;
+    private String name; // ten 
+    private int Age;    // tuoi 
+    //private String TypeOfAnimal; // ten goi
     
     // Ham dung
     public Animal(String name, int Age) {

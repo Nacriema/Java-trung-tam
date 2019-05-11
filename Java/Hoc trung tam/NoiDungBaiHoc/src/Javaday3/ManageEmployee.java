@@ -7,11 +7,12 @@
 // Mot khi da viet ham thi phai de cao tinh tai su dung cua no !!!!!!!!11
 package Javaday3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
- * @author PC
+ * @author Day la Phan code cua minh lam tu truoc, ma no sida que
  */
 //public class ManageEmployee {
 //    public static Employee[] employees;
@@ -246,126 +247,164 @@ import java.util.Scanner;
 //         }
 //       }
 //    }
-//   // Toi ve edit lai cai code ni  
-//    
-//    
 //}
-public class ManageEmployee {
+
+
+// 1. Da cai dat su dung Interface
+// 2. Cai dat doi Employee[] thanh mot trong cac kieu collection
+
+public class ManageEmployee{
 	public static Scanner scanner = new Scanner(System.in);
 	public static int inputNumber = 0;
 	public static int employeeNo = 0;
-	public static Employee[] employees;
+	//public static Employee[] employees;
+        public static ArrayList<Employee>employees = new ArrayList<Employee>();
 	public static boolean isEndProgram = false;
-	public static void main(String[] args) {
+
+        // Ham main
+        public static void main(String[] args) {
 		showMenu();
 		System.out.println("The program end!!!");
 	}
 	
-	public static void showMenu() {
-		do {
+        public static void showMenu() {
+            // Phia sau khong the la EmployeeInp vi no chua cai dat cai implement, co cai ManageEmployee la da cai dat tat ca cac thuoc tinh chi tiet
+            EmployeeIntp Employeein = new EmployeeImpl() {};
+            //OR   EmployeeIntp Employeein = new ManageEmployee();
+                do {
 			if (isEndProgram) {
 				break;
 			}
 			System.out.println("Choose one numbers below : ");
 			System.out.println("1: Create  new Employees");
 			System.out.println("2: Show the existing Employees");
-			System.out.println("4: Search employee by name");
-			System.out.println("5: Update employee by name");
-			System.out.println("3: exit");
+			System.out.println("3: Search employee by name");
+			System.out.println("4: Update employee by name");
+			System.out.println("5: exit");
 			System.out.println("-------------------------------");
 			System.out.println("Type your input number : ");
 			inputNumber = scanner.nextInt();
 			switch (inputNumber) {
 			case 1:
-				addEmployee();
+				Employeein.addEmployee(employees);
 				askForContinue();
 				break;
 			case 2:
-				if (employees != null && employees.length > 0) {
-					showEmployee();
+				if (employees != null && employees.size() > 0) {
+					Employeein.showEmployee(employees);
 				} else {
 					System.out.println("Please add new employee first!");
 					System.out.println("-------------------------------");
 				}
 				askForContinue();
 				break;
+			
 			case 3:
-				break;
-			case 4:
 				System.out.println("Please input name to search : ");
 				String nameInput = scanner.next();
-				Employee employee = searchByName(nameInput);
+                                Employee employee4 = null;
+				employee4 = Employeein.searchByName(employees, nameInput);
+                                if(employee4 == null){
+                                    System.out.println("There is no employee that you find in the data base.");
+                                    askForContinue();
+                                    break;
+                                }
+                                else{
 				System.out.println("-----Thong tin tim kiem --------");
-				System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getSalary());
+                                System.out.println("ID   Name      Salary    Job name");
+				System.out.println(employee4.getId() + "    " + employee4.getName() + "       " + employee4.getSalary() + "    " + employee4.getJob().getName());
 				askForContinue();
-			case 5:
+                                break;
+                                }
+			case 4:
 				System.out.println("Please input name to update : ");
 				String nameInputUpdate = scanner.next();
-                               
+                                // Them vong if de check valid name o day:
+                                
+                                Employee employee5 = null;
+				employee5 = Employeein.searchByName(employees, nameInputUpdate);
+                                if(employee5 == null){
+                                    System.out.println("There is no employee to update.");
+                                    askForContinue();
+                                    break;
+                                }
+                                else{
 				System.out.println("Please input new salary : ");
 				double newSalary = scanner.nextDouble();
 				/*String fullName = "nguyen tam thanh";
 				if (fullName.contains(nameInputUpdate)) {
 					//do somethings
 				}*/
-				updateEmployeeByName(nameInputUpdate, newSalary);
+				Employeein.updateEmployeeByName(employees,nameInputUpdate, newSalary);
 				askForContinue();
+                                break;
+                                }
+                        case 5:
+				break;
 			default:
 				System.out.println("your input number is wrong, please input again!");
 				System.out.println("-------------------------------");
 				showMenu();
 			}
 
-		} while (inputNumber != 3);
+		} while (inputNumber != 5);
 	}
+        
+  // Theo yeu cau cua thay thi lam cai interface EmployeeInp o ngoai xong roi lam cai con EmployeeImpl de chi tiet hoa thang cha cua no
+  // Sau do minh cai tien lai ham con, vi trong ham ManageEmployee thi no co bien mang la Employee        
+        // Thang con ManageEmployee ghi de len phuong thuc cua thang cha:  
+//	@Override
+//	public void addEmployee() {
+//		System.out.println("How many employee you want to create? : ");
+//		employeeNo = scanner.nextInt();
+//		employees = new Employee[employeeNo];
+//		for (int i = 0; i < employeeNo; i++) {
+//			System.out.println("Please input the information of employee[" + (i + 1) + "] : ");
+//			System.out.println("Name : ");
+//			String name = scanner.next();
+//			System.out.println("Salary : ");
+//			double salary = scanner.nextDouble();
+//			System.out.println("Age : ");
+//			int age = scanner.nextInt();
+//			System.out.println("Job name : ");
+//			String jobName = scanner.next();
+//			Employee employee = new Employee(name, i + 1, salary, age, true, new Job(i + 1, jobName));
+//			employees[i] = employee;
+//		}
+//	}
 	
-	public static void addEmployee() {
-		System.out.println("How many employee you want to create? : ");
-		employeeNo = scanner.nextInt();
-		employees = new Employee[employeeNo];
-		for (int i = 0; i < employeeNo; i++) {
-			System.out.println("Please input the information of employee[" + (i + 1) + "] : ");
-			System.out.println("Name : ");
-			String name = scanner.next();
-			System.out.println("Salary : ");
-			double salary = scanner.nextDouble();
-			System.out.println("Age : ");
-			int age = scanner.nextInt();
-			System.out.println("Job name : ");
-			String jobName = scanner.next();
-			Employee employee = new Employee(name, i + 1, salary, age, true, new Job(i + 1, jobName));
-			employees[i] = employee;
-		}
-	}
 	
-	public static void showEmployee() {
-		System.out.println("----------------List of employee-----------");
-		System.out.println("ID Name             Salary    Job name");
-		for (int i = 0; i < employees.length; i++) {
-			System.out.println(employees[i].getId() + " " + employees[i].getName() + "       " + employees[i].getSalary() + " " + employees[i].getJob().getName());
-		}
-	} 
-	
-	public static Employee searchByName(String nameInput) {
-		Employee employee = null;
-		for (int i = 0; i< employees.length; i++) {
-			if (nameInput.equals(employees[i].getName())) {
-				employee = employees[i];
-				break;
-			}
-		}
-		return employee;
-	}
-	
-	public static void updateEmployeeByName(String nameInput, Double newSalary) {
-		for (int i = 0; i< employees.length; i++) {
-			if (nameInput.equals(employees[i].getName())) {
-				employees[i].setSalary(newSalary);
-				break;
-			}
-                    }
-		}
-	
+        
+//      @Override
+//	public void showEmployee() {
+//		System.out.println("----------------List of employee-----------");
+//		System.out.println("ID Name             Salary    Job name");
+//		for (int i = 0; i < employees.length; i++) {
+//			System.out.println(employees[i].getId() + " " + employees[i].getName() + "       " + employees[i].getSalary() + " " + employees[i].getJob().getName());
+//		}
+//	} 
+        
+//	@Override
+//	public Employee searchByName(String nameInput) {
+//		Employee employee = null;
+//		for (int i = 0; i< employees.length; i++) {
+//			if (nameInput.equals(employees[i].getName())) {
+//				employee = employees[i];
+//				break;
+//			}
+//		}
+//		return employee;
+//	}
+        
+//        @Override
+//	public void updateEmployeeByName(String nameInput, Double newSalary) {
+//		for (int i = 0; i< employees.length; i++) {
+//			if (nameInput.equals(employees[i].getName())) {
+//				employees[i].setSalary(newSalary);
+//				break;
+//			}
+//                    }
+//		}
 	
 	public static void askForContinue() {
 		System.out.println("Do you want to continue? (Press 3 to end proram, 0 to come back menu) : ");

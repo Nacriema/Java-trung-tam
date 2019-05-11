@@ -11,9 +11,10 @@ package Javaday4;
  */
 public class Dog extends Animal {
     private String TypeOfAnimal;
+    // Ham dung cho class dog
     public Dog(String name, int Age, String TypeOfAnimal) {
         super(name, Age);  // no co moi cai ham khoi tao thua ke cac thuoc tinh cua thang cha thoi tinh ke thua tu class Animal do vay cac ham setname, getname auto tu hieu
-        this.TypeOfAnimal = TypeOfAnimal;
+        this.TypeOfAnimal = TypeOfAnimal; 
     }
     public String getTypeAnimal() {
         return TypeOfAnimal;
