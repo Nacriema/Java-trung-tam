@@ -1,0 +1,162 @@
+@media screen and (max-width: 2000px) { 
+
+/*Write your css here*/
+table, th, td{
+	border: 1px solid white;
+	border-collapse:collapse;
+		}
+th, td{
+	padding: 10px;
+	}
+/* Ta cần custom lại cái nút radio có thêm trường checkmark là cái dấu chấm ở bên trong của nó á*/
+
+.container {
+	/*display: block;*/
+	position:relative;
+	padding-left: 20px;
+	margin-bottom:12px;
+	cursor:pointer;
+	-webkit-user-select: none;
+	-moz-user-select:none;
+	-ms-user-select: none;
+	user-select:none;
+	
+}
+/* An di cai default radio button cai ni chay ok*/
+.container input{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	
+}
+/* Tao cai custom radio button*/
+.checkmark{
+		position: absolute;
+		top :0;
+		left:0;
+		height:14px;
+		width:14px;
+		background-color: #aaa;
+		border-radius: 50%;;
+}
+/*Khi re chuot den thi mau sac o cung thay doi*/
+.container:hover input~.checkmark{
+	background-color:#ccc;
+	
+}
+/*Khi ma an vao, thi them cai nen xanh vao*/
+.container input:checked~
+.checkmark{
+	background-color: #2196f3;
+}
+/* tao cai cham o giua, an khi ma chua an nut chon */
+.checkmark:after{
+	content:"";
+	position: absolute;
+	display: none;
+}
+/*Hien dau cham len khi ma chon o roi*/
+.container input:checked~
+.checkmark:after{
+	display: block;
+}
+/*Style cua dau cham do*/
+.container .checkmark:after{
+	top:4px;
+	left:4px;
+	width:6px;
+	height:6px;
+	border-radius:50%;
+	background: white;
+}
+
+input[type="text"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+input[type="tel"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+input[type="date"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+input[type="email"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+input[type="password"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+input[type="text"] {
+    width: 290px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #9e9e9eba;
+    /* margin-left: 28px; */
+}
+
+.header {
+    background-color: #1a3a7f;
+    color: white;
+    width: 100%;
+	float: right;
+}
+
+p.hotline {
+    color: rgb(255,0,0);
+}
+
+h1.tieude {
+    /* display: block; */
+    font-size: 25px;
+    float: left;
+    margin-top: 38px;
+    margin-right: 148px;
+    margin-left: 20px;
+    color: #3c4c61;
+}
+img.logo {
+    width: 150px;
+	height: 80px;
+    margin-left: 100px;
+    float: left;
+}
+
+div.p2 {
+    background-color: #f1f9fb;
+}
+
+ul.subp2 li {
+    display: inline-block;
+    margin-left: 22px;
+    margin-top: 28px;
+    /* display: block; */
+}
+ul.dangnhap li{
+	display:inline-block;
+	float:right;
+    margin-right: 22px
+	}
+
+}
+@media screen and (max-width: 800px) { 
+
+}
