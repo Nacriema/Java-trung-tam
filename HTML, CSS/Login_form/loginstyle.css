@@ -1,0 +1,66 @@
+/* Bodered form*/
+
+form{
+	width: 400px;
+	height: 250px;
+	border: 3px solid #e8abab;
+	border-radius: 5px;
+}
+
+label {
+    width: 74px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+h3 {
+    color: white;
+    background-color: red;
+    padding: 15px;
+    width: 85%;
+    text-align: center;
+    margin: 25px auto;
+}
+
+input[type="email"] {
+    margin: 5px auto;
+    width: 68%;
+    height: 25px;
+}
+
+input[type="password"] {
+    width: 68%;
+    margin: 5px auto;
+    height: 25px;
+}
+
+.label{
+	display: inline-block;
+}
+.boxed{
+	text-align: center;
+	margin: 20px 5px 0px 5px;
+	/*margin-top: 20px;
+	margin-right: 5px;
+	margin-left: 5px;*/
+	padding-top: 1px;
+	color: white;
+	background-color: red;
+	height:40px;
+}
+button{
+	color: white;
+    background-color: blue;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+	margin-top: 10px;
+	margin-left: 30%;
+	margin-right: 30%
+}
+button:hover {
+opacity: 0.8;
+}
+.container{
+	padding: 10px;
+}
