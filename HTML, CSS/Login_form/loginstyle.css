@@ -55,11 +55,11 @@ button{
     text-align: center;
     width: 40%;
 	margin-top: 10px;
-	margin-left: 30%;
-	margin-right: 30%
+	margin-left: 40%;
+	border-radius: 5px;
 }
 button:hover {
-opacity: 0.8;
+opacity: 0.9;
 }
 .container{
 	padding: 10px;

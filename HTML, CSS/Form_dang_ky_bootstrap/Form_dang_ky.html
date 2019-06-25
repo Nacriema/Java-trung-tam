@@ -1,0 +1,188 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Form Đăng Ký</title>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+	<div class="header">
+		<ul class="dangnhap">
+			<li>Đăng ký</li>
+			<li>Đăng nhập</li>
+		</ul>
+	</div>
+	<div class="p2">
+		<img class="logo" src="logo.jpg" alt="Logo của hãng">
+		<h1 class="tieude">CARENEFIT HEALTH MANAGEMENT SYSTEM</h1>
+		<div>
+			<ul class="subp2">
+				<li>
+					<img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/default.png" alt="">
+				</li>
+				<li>
+					<img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/english.png" alt="">
+				</li>
+				<li>
+					<i class="fas fa-search"></i>
+				</li>
+			</ul>
+			<p class="hotline">Hotline: +8428 3517 1317</p>
+		</div>
+	</div>
+		<form action="#">
+			<table width="1000" align="center">
+				<tr>
+					<th style="font-size:30"colspan="6">Đăng Ký</th>
+				</tr>
+			
+				<tr>
+					<td><span style="color:red">*</span>Trường bắt buộc</td>
+					<td></td>
+					<td>
+						<label class="container">
+							<input type="radio" name="canhan/tochuc" id="canhan"/>Cá nhân
+							<span class="checkmark"></span>
+						</label>
+						
+						<label class="container">
+							<input type="radio" name="canhan/tochuc" id="tochuc"/>Công ty/tổ chức
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Họ và tên<span style="color:red">*</span></td>
+					<td>
+						<input type="text" name="hoten" id="hoten" placeholder="Nhập họ tên"/><br/>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Số điện thoại</td>
+					<td>
+						<input type="tel" name="sdt" id="sdt" placeholder="Nhập số điện thoại"/><br/>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Ngày sinh<span style="color:red">*</span></td>
+					<td>
+						<input type="date" name="ngaysinh" id="ngaysinh" placeholder="Nhập ngày sinh"/>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Địa chỉ</td>
+					<td>
+						<input type="text" name="diachi" id="diachi" size="40" placeholder="Nhập địa chỉ"/>
+					</td>
+					<td rowspan="2">
+					
+						<label class="container">
+						<input type="radio" name="diachi" id="tphcm" value="tphcm"/>TP.HCM
+						<span class="checkmark"></span>
+						</label>
+						
+						<select name="hcm" id="hcm" style="width:160px">
+							<option value="quan1">Quận 1</option>
+							<option value="quan1">Bla Bla....</option>
+							<option value="quan7">Quận 7</option>
+							<option value="quanbinhchanh">Quận Bình Chánh</option>
+							<option value="quanphunhuan">Quận Phú Nhuận</option>
+							<option value="quanbinhthanh">Quận Bình Thạnh</option>
+						</select><br/><br/>
+						
+						<label class="container">
+						<input type="radio" name="diachi" id="noikhac" value="noikhac"/>Tỉnh thành khác
+						<span class="checkmark"></span>
+						</label>
+						
+						<select name="tinhkhac" id="tinhkhac" style="width:160px">
+							<option value="danang">Đà Nẵng</option>
+							<option value="quangnam">Quảng Nam</option>
+							<option value="quangngai">Quảng Ngãi</option>
+							<option value="hanoi">Hà Nội</option>
+							<option value="haiphong">Hải Phòng</option>
+							<option value="cantho">Cần Thơ</option>
+						</select>
+						
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					
+				
+				</tr>
+				
+				
+				<tr>
+					<td></td>
+					<td>Giới tính</td>
+					<td>
+						<label class="container">
+							<input type="radio" id="nam" name="gioitinh"/>Nam
+							<span class="checkmark"></span>
+						</label>
+						<label class="container">
+							<input type="radio" id="nu" name="gioitinh"/>Nữ
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Email<span style="color:red">*</span></td>
+					<td>
+						<input type="email" id="email" name="email" size="40" placeholder="Nhập địa chi email"/><br/>
+					</td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>Mật khẩu<span style="color:red">*</span></td>
+					<td>
+						<input type="password" id="password" name="password" size="40" placeholder="Nhập mật khẩu"/><br/>
+					</td>
+					<td></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td>Nhập lại mật khẩu<span style="color:red">*</span></td>
+					<td>
+						<input type="password" id="password" name="password" size="40" placeholder="Nhập lại mật khẩu"/>
+					</td>
+					<td></td>
+				</tr>
+			</table>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			$('input[name="diachi"]').on('change', function() {
+				$('select[name="hcm"]').attr('disabled', this.value != "tphcm");
+				$('select[name="tinhkhac"]').attr('disabled', this.value != "noikhac")
+			});
+		</script>
+		</form>
+	</body>
+
+</html>

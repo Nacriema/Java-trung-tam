@@ -1,0 +1,53 @@
+
+.navbar .navbar-brand{
+  margin-left: 50px !important;
+}
+
+.navbar-nav > li > .dropdown-menu {
+ 
+background-color: limegreen;
+ 
+}
+ 
+/*.navbar-nav > li > .dropdown-menu > a {
+ 
+color: white ;
+ 
+}*/
+ 
+.navbar-nav > li > .dropdown-menu >  a:hover,
+ 
+.navbar-nav > li > .dropdown-menu >  a:focus {
+color: green;
+background-color: white;
+}
+
+
+.carousel .carousel-item{
+	height: 500px;
+}
+.carousel-item img{
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 500px;
+}
+
+.carousel-indicators li{
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+}
+.carousel-fade .carousel-item {
+ opacity: 0.5;
+ transition-duration: .6s;
+ transition-property: opacity;
+}
+
+.carousel-fade  .carousel-item.active,
+.carousel-fade  .carousel-item-next.carousel-item-left,
+.carousel-fade  .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+}
+
+
