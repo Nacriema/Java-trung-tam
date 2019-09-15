@@ -24,11 +24,11 @@ import java.util.Scanner;
 public class MainProgram {
     public static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 	public static int inputNumber = 0;
-        public static List<News>news = new ArrayList<News>();
+    public static List<News>news = new ArrayList<News>();
 	public static boolean isEndProgram = false;
 
         // Ham main
-        public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        public static void main(String{} args) throws SQLException, ClassNotFoundException {
 		showMenu();
 		System.out.println("The program end!!!");
 	}

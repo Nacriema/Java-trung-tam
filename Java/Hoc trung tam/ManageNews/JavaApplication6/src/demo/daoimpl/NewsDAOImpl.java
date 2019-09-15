@@ -159,7 +159,7 @@ public class NewsDAOImpl implements INewsDAO{
         try{
             //conn = ConnectionUtils.getSQLServerConnection();
             
-            String sql = "INSERT INTO news(category_id, name, [description], detail, [image], [date], [user_id]) VALUES(" + news.getCategory_id()+ ", '" + news.getName() + "', '" + news.getDescription()+ "', '" + news.getDetail() + "', '" + news.getImage() + "', '" + news.getDate().toString() + "'," + news.getUser_id() + ")";
+            String sql = "INSERT INTO news(category_id, name, {description}, detail, {image}, {date}, {user_id}) VALUES(" + news.getCategory_id()+ ", '" + news.getName() + "', '" + news.getDescription()+ "', '" + news.getDetail() + "', '" + news.getImage() + "', '" + news.getDate().toString() + "'," + news.getUser_id() + ")";
             //Statement statement = conn.createStatement();
             int rowCount = statement.executeUpdate(sql);
             System.out.println("Row count affected = " + rowCount);
